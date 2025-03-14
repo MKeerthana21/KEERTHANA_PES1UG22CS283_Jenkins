@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     echo 'Compiling the .cpp file...'
-                    sh 'g++ -o YOUR_SRN-1 hello.cpp'  // Replace hello.cpp with your actual file name
+                    sh 'g++ -o PES1UG22CS283-1 hi.cpp'  // Replace hello.cpp with your actual file name
                 }
             }
         }
@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     echo 'Running the compiled .cpp file...'
-                    sh './YOUR_SRN-1'  // Run the compiled file
+                    sh './PES1UG22CS283-1'  // Run the compiled file
                 }
             }
         }
