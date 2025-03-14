@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    echo 'Compiling the .cpp file...'
+                    sh 'g++ -o YOUR_SRN-1 hello.cpp'  // Replace hello.cpp with your actual file name
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    echo 'Running the compiled .cpp file...'
+                    sh './YOUR_SRN-1'  // Run the compiled file
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the application...'
+                // Placeholder for deploy tasks (e.g., moving files, server deployment, etc.)
+            }
+        }
+    }
+
+    post {
+        failure {
+            echo 'Pipeline failed'
+        }
+    }
+}
